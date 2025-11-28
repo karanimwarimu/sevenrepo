@@ -34,3 +34,7 @@ print(unique_items)
 #creating total revenue per item
 item_net_revenue={item: sum(s["price"]*s["quantity"]*(1-s["discount"]) for s in sales if s["item"]==item) for item in unique_items}
 print(item_net_revenue)
+
+# identify high performing items
+top_items = [item for item,revenue in item_net_revenue.items() if revenue> 2000]
+print( top_items)
