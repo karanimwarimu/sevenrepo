@@ -38,3 +38,7 @@ print(item_net_revenue)
 # identify high performing items
 top_items = [item for item,revenue in item_net_revenue.items() if revenue> 2000]
 print( top_items)
+
+# filter sales data to include only high performing items
+filtered_sales =[ sales for sales in sales if sales["item"] in top_items]
+print(filtered_sales)   
