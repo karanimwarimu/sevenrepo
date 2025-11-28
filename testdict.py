@@ -27,8 +27,10 @@ sales = [
      "price": 310, "quantity": 2, "discount": 0.00, "date": "2025-01-06"},
 ]
 # create a list of unique items
-unique_names = [dict.get("item") for dict in sales]
-print(unique_names)
 
+unique_items=list({item["item"] for item in sales})
+print(unique_items)
 
-    
+#creating total revenue per item
+item_net_revenue={item: sum(s["price"]*s["quantity"]*(1-s["discount"]) for s in sales if s["item"]==item) for item in unique_items}
+print(item_net_revenue)
