@@ -42,3 +42,8 @@ print( top_items)
 # filter sales data to include only high performing items
 filtered_sales =[ sales for sales in sales if sales["item"] in top_items]
 print(filtered_sales)   
+
+
+#total quantity sold per branch
+branch_quantities = {dict.get("branch") + dict.get("item"): dict.get("quantity") for dict in filtered_sales}
+print(branch_quantities)
