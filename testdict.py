@@ -26,8 +26,8 @@ sales = [
     {"branch": "Mombasa", "item": "Tablet", "category": "Electronics",
      "price": 310, "quantity": 2, "discount": 0.00, "date": "2025-01-06"},
 ]
-# create a list of unique items
 
+# create a list of unique items
 unique_items=list({item["item"] for item in sales})
 print(unique_items)
 
@@ -47,3 +47,7 @@ print(filtered_sales)
 #total quantity sold per branch
 branch_quantities = {dict.get("branch") + dict.get("item"): dict.get("quantity") for dict in filtered_sales}
 print(branch_quantities)
+
+#highest per branch 
+branch_highest = max(branch_quantities, key =branch_quantities.get)
+print(branch_highest)
